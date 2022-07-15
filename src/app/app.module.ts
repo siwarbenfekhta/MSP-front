@@ -18,6 +18,8 @@ import { ResellersComponent } from './Private/admin/dashboard/resellers/reseller
 import { DocumentsComponent } from './Private/admin/dashboard/documents/documents.component';
 import { SidebarComponent } from './Private/admin/dashboard/sidebar/sidebar.component';
 import { MobileComponent } from './Private/admin/dashboard/mobile/mobile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { MobileComponent } from './Private/admin/dashboard/mobile/mobile.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

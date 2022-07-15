@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Title} from "@angular/platform-browser";
 @Component({
   selector: 'app-resellers',
   templateUrl: './resellers.component.html',
@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResellersComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(private titleService:Title) { this.titleService.setTitle("Revendeurs");}
+  ngOnInit() {}
 
 }

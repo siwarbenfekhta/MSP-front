@@ -33,53 +33,251 @@
         </div>
       </div>
     </div>
-    <!-- [ breadcrumb ] end -->
-
-
-
-    <!-- [ Main Content ] start -->
     <div class="row">
-      <!-- visitors  start -->
-      <div class="col-sm-3">
-        <div class="card bg-primary text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">18</h2>
-            <h6 class="text-white">Registered Users</h6>
-            <i class="feather icon-user-plus"></i>
+      <!-- [ basic-table ] start -->
+      <div class="col-xl-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Revendeurs </h5>
+          </div>
+          <div class="card-body table-border-style">
+            <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+
+              <!-- [ breadcrumb ] end -->
+              <div class="row" animationDuration="0ms">
+                <mat-tab-group animationDuration="0ms">
+                  <mat-tab label="Abonnement et licences MSP">
+                    <div class="dataTable-top">
+
+                      <div class="btn-group mr-2 mb-2">
+                        <button style="border: none;" class="btn btn-outline-primary dropdown-toggle" type="button"
+                          id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                          aria-expanded="false">
+                          (PC). All Approved Resellers
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                          <li><a class="dropdown-item" href="#">(PC). All Approved Resellers</a></li>
+                          <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
+                          <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
+                        </ul>
+
+                      </div>
+                      <div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text">
+                      </div>
+                    </div>
+                    <div class="dataTable-container">
+                      <table class="table dataTable-table" id="pc-dt-simple">
+                        <thead>
+                          <tr>
+                            <th><a href="#" class="dataTable-sorter">Numéro</a></th>
+                            <th><a href="#" class="dataTable-sorter">Revendeur</a></th>
+                            <th><a href="#" class="dataTable-sorter">Demandeur</a></th>
+                            <th><a href="#" class="dataTable-sorter">Date de création</a></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>PRTNR202111-10569</td>
+                            <td>INFORSAL</td>
+                            <td>Curicó</td>
+                            <td>2005/02/11 08:54</td>
+                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                  class="material-icons-two-tone iStyle">edit</i></button></td>
+                          </tr>
+                          <tr>
+                            <td>PRTNR202108-9125</td>
+                            <td>POIRU</td>
+                            <td>Dhanbad</td>
+                            <td>1999/04/07 08:54</td>
+                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                  class="material-icons-two-tone iStyle">edit</i></button></td>
+                          </tr>
+                          <tr>
+                            <td>PRTNR202104-8109</td>
+                            <td>IRUR</td>
+                            <td>Norman</td>
+                            <td>2005/09/08 08:54</td>
+                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                  class="material-icons-two-tone iStyle">edit</i></button></td>
+                          </tr>
+                          <tr>
+                            <td>PRTNR202104-8134</td>
+                            <td>LKRIR</td>
+                            <td>Amqui</td>
+                            <td>2009/29/11 08:54</td>
+                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                  class="material-icons-two-tone iStyle">edit</i></button></td>
+                          </tr>
+                          <tr>
+                            <td>PRTNR202104-8155</td>
+                            <td>INFFRSAL</td>
+                            <td>Kempten</td>
+                            <td>2006/11/09 08:54</td>
+                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                  class="material-icons-two-tone iStyle">edit</i></button></td>
+                          </tr>
+                          <tr>
+                            <td>PRTNR202104-8463</td>
+                            <td>INFOFFRSAL</td>
+                            <td>Enines</td>
+                            <td>2006/03/08 08:54</td>
+                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                  class="material-icons-two-tone iStyle">edit</i></button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="dataTable-bottom">
+                      <div class="dataTable-info">Showing 1 to 10 of 100 entries</div>
+                      <nav class="dataTable-pagination">
+                        <ul class="dataTable-pagination-list">
+                          <li class="active"><a href="#" data-page="1">1</a></li>
+                          <li class=""><a href="#" data-page="2">2</a></li>
+                          <li class=""><a href="#" data-page="3">3</a></li>
+                          <li class=""><a href="#" data-page="4">4</a></li>
+                          <li class=""><a href="#" data-page="5">5</a></li>
+                          <li class=""><a href="#" data-page="6">6</a></li>
+                          <li class=""><a href="#" data-page="7">7</a></li>
+                          <li class="ellipsis"><a href="#">…</a></li>
+                          <li class=""><a href="#" data-page="10">10</a></li>
+                          <li class="pager"><a href="#" data-page="2">›</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </mat-tab>
+                  <mat-tab label="Licences standard">
+                    <div class="dataTable-top">
+
+                      <div class="btn-group mr-2 mb-2">
+                        <button style="border: none;" class="btn btn-outline-primary dropdown-toggle" type="button"
+                          id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                          aria-expanded="false">
+                          (PC). All Approved Resellers
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                          <li><a class="dropdown-item" href="#">All</a></li>
+                          <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
+                          <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
+                        </ul>
+
+                      </div>
+                      <div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text">
+                      </div>
+                    </div>
+                    <div class="dataTable-container">
+                      <table class="table dataTable-table" id="pc-dt-simple">
+                        <thead>
+                          <tr>
+                            <th><a href="#" class="dataTable-sorter">Automatisation ID</a></th>
+                            <th><a href="#" class="dataTable-sorter">Revendeur</a></th>
+                            <th><a href="#" class="dataTable-sorter">Crée par</a></th>
+                            <th><a href="#" class="dataTable-sorter">Statut</a></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>10569</td>
+                            <td>INFORSAL</td>
+                            <td>Curicó</td>
+                            <td>En cours</td>
+                          </tr>
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="dataTable-bottom">
+                      <div class="dataTable-info">Showing 1 to 10 of 100 entries</div>
+                      <nav class="dataTable-pagination">
+                        <ul class="dataTable-pagination-list">
+                          <li class="active"><a href="#" data-page="1">1</a></li>
+                          <li class=""><a href="#" data-page="2">2</a></li>
+                          <li class=""><a href="#" data-page="3">3</a></li>
+                          <li class=""><a href="#" data-page="4">4</a></li>
+                          <li class=""><a href="#" data-page="5">5</a></li>
+                          <li class=""><a href="#" data-page="6">6</a></li>
+                          <li class=""><a href="#" data-page="7">7</a></li>
+                          <li class="ellipsis"><a href="#">…</a></li>
+                          <li class=""><a href="#" data-page="10">10</a></li>
+                          <li class="pager"><a href="#" data-page="2">›</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </mat-tab>
+                </mat-tab-group>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
-        <div class="card bg-success text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">14</h2>
-            <h6 class="text-white">Active Users</h6>
-            <i class="feather icon-user-check"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card bg-danger text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">1</h2>
-            <h6 class="text-white">Pending Users</h6>
-            <i class="feather icon-user-minus"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card bg-warning text-white widget-visitor-card">
-          <div class="card-body text-center">
-            <h2 class="text-white">16</h2>
-            <h6 class="text-white">Active Memberships</h6>
-            <i class="feather icon-users"></i>
-          </div>
-        </div>
-      </div>
-      <!-- visitors  end -->
     </div>
-    <!-- [ Main Content ] end -->
   </div>
 </div>
-
 <!-- [ Main Content ] end -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Modifier PRTNR202111-10569</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="numero" class="col-sm-2 col-form-label">Numéro</label>
+              <input type="text" class="form-control" placeholder="PRTNR202111-10569">
+            </div>
+            <div class="col-sm-6">
+              <label for="revendeur" class="col-sm-2 col-form-label">Revendeur</label>
+              <input type="text" class="form-control" placeholder="INFORSAL">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="distribiteur" class="col-sm-2 col-form-label">Distributeur</label>
+              <input type="text" class="form-control" placeholder="MIPS Micro Informatique, Progiciels et Services">
+            </div>
+            <div class="col-sm-6">
+              <label for="statut" class="col-sm-2 col-form-label">Statut</label>
+              <input type="text" class="form-control" placeholder="Awaiting Approval
+            ">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="demandeur" class="col-sm-2 col-form-label">Demandeur</label>
+              <input type="text" class="form-control" placeholder="Elias Teixeira">
+            </div>
+            <div class="col-sm-6">
+              <label for="approver" class="col-sm-2 col-form-label">Approver</label>
+              <input type="text" class="form-control" placeholder="Approver">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label for="commentaire" class="col-sm-2 col-form-label">Commentaire</label>
+              <input type="text" class="form-control" placeholder="Commentaire">
+            </div>
+            <div class="col-sm-6">
+              <label for="date" class=" col-form-label">Date création</label>
+              <input type="text" class="form-control" placeholder="03/11/2021">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn  btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn  btn-primary" data-bs-dismiss="modal">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
