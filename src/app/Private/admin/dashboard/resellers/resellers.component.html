@@ -44,171 +44,127 @@
             <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
 
               <!-- [ breadcrumb ] end -->
-              <div class="row" animationDuration="0ms">
+              <div class="row">
                 <mat-tab-group animationDuration="0ms">
                   <mat-tab label="Abonnement et licences MSP">
-                    <div class="dataTable-top">
-
-                      <div class="btn-group mr-2 mb-2">
-                        <button style="border: none;" class="btn btn-outline-primary dropdown-toggle" type="button"
-                          id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                          aria-expanded="false">
-                          (PC). All Approved Resellers
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
-                          <li><a class="dropdown-item" href="#">(PC). All Approved Resellers</a></li>
-                          <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
-                          <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
-                        </ul>
-
-                      </div>
-                      <div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text">
-                      </div>
+                    <div>
+                      <button style="border: none; height: 35px;margin-left: 0%;"
+                        class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuClickableInside"
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="true">
+                        (PC). All Approved Resellers
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <li><a class="dropdown-item" href="#">(PC). All Approved Resellers</a></li>
+                        <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
+                        <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
+                      </ul>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Search</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                      </mat-form-field>
                     </div>
+
                     <div class="dataTable-container">
-                      <table class="table dataTable-table" id="pc-dt-simple">
-                        <thead>
-                          <tr>
-                            <th><a href="#" class="dataTable-sorter">Numéro</a></th>
-                            <th><a href="#" class="dataTable-sorter">Revendeur</a></th>
-                            <th><a href="#" class="dataTable-sorter">Demandeur</a></th>
-                            <th><a href="#" class="dataTable-sorter">Date de création</a></th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>PRTNR202111-10569</td>
-                            <td>INFORSAL</td>
-                            <td>Curicó</td>
-                            <td>2005/02/11 08:54</td>
-                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
-                                  class="material-icons-two-tone iStyle">edit</i></button></td>
-                          </tr>
-                          <tr>
-                            <td>PRTNR202108-9125</td>
-                            <td>POIRU</td>
-                            <td>Dhanbad</td>
-                            <td>1999/04/07 08:54</td>
-                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
-                                  class="material-icons-two-tone iStyle">edit</i></button></td>
-                          </tr>
-                          <tr>
-                            <td>PRTNR202104-8109</td>
-                            <td>IRUR</td>
-                            <td>Norman</td>
-                            <td>2005/09/08 08:54</td>
-                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
-                                  class="material-icons-two-tone iStyle">edit</i></button></td>
-                          </tr>
-                          <tr>
-                            <td>PRTNR202104-8134</td>
-                            <td>LKRIR</td>
-                            <td>Amqui</td>
-                            <td>2009/29/11 08:54</td>
-                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
-                                  class="material-icons-two-tone iStyle">edit</i></button></td>
-                          </tr>
-                          <tr>
-                            <td>PRTNR202104-8155</td>
-                            <td>INFFRSAL</td>
-                            <td>Kempten</td>
-                            <td>2006/11/09 08:54</td>
-                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
-                                  class="material-icons-two-tone iStyle">edit</i></button></td>
-                          </tr>
-                          <tr>
-                            <td>PRTNR202104-8463</td>
-                            <td>INFOFFRSAL</td>
-                            <td>Enines</td>
-                            <td>2006/03/08 08:54</td>
-                            <td> <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
-                                  class="material-icons-two-tone iStyle">edit</i></button></td>
-                          </tr>
-                        </tbody>
+
+                      <table id="ExampleMaterialTable" mat-table [dataSource]="dataSource">
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="numero">
+                          <th mat-header-cell *matHeaderCellDef> Numéro </th>
+                          <td mat-cell *matCellDef="let row"> {{row.numero}} </td>
+                        </ng-container>
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="Revendeur">
+                          <th mat-header-cell *matHeaderCellDef> Revendeur </th>
+                          <td mat-cell *matCellDef="let row"> {{row.revendeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="Demandeur">
+                          <th mat-header-cell *matHeaderCellDef> Demandeur </th>
+                          <td mat-cell *matCellDef="let row"> {{row.demandeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="dateCreation">
+                          <th mat-header-cell *matHeaderCellDef> Date de création </th>
+                          <td mat-cell *matCellDef="let row"> {{row.dateCreation}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="modifier">
+                          <th mat-header-cell *matHeaderCellDef> Modifier </th>
+                          <td mat-cell *matCellDef="let row">
+                            <button type="button" class="btn  btn-primary btn-sm" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                class="material-icons-two-tone iStyle">edit</i></button>
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        <!-- Row shown when there is no matching data. -->
+                        <tr class="mat-row" *matNoDataRow>
+                          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                        </tr>
                       </table>
-                    </div>
-                    <div class="dataTable-bottom">
-                      <div class="dataTable-info">Showing 1 to 10 of 100 entries</div>
-                      <nav class="dataTable-pagination">
-                        <ul class="dataTable-pagination-list">
-                          <li class="active"><a href="#" data-page="1">1</a></li>
-                          <li class=""><a href="#" data-page="2">2</a></li>
-                          <li class=""><a href="#" data-page="3">3</a></li>
-                          <li class=""><a href="#" data-page="4">4</a></li>
-                          <li class=""><a href="#" data-page="5">5</a></li>
-                          <li class=""><a href="#" data-page="6">6</a></li>
-                          <li class=""><a href="#" data-page="7">7</a></li>
-                          <li class="ellipsis"><a href="#">…</a></li>
-                          <li class=""><a href="#" data-page="10">10</a></li>
-                          <li class="pager"><a href="#" data-page="2">›</a></li>
-                        </ul>
-                      </nav>
+                      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                        aria-label="Select page of periodic elements">
+                      </mat-paginator>
                     </div>
                   </mat-tab>
                   <mat-tab label="Licences standard">
-                    <div class="dataTable-top">
-
-                      <div class="btn-group mr-2 mb-2">
-                        <button style="border: none;" class="btn btn-outline-primary dropdown-toggle" type="button"
-                          id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                          aria-expanded="false">
-                          (PC). All Approved Resellers
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
-                          <li><a class="dropdown-item" href="#">All</a></li>
-                          <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
-                          <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
-                        </ul>
-
-                      </div>
-                      <div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text">
-                      </div>
+                    <div>
+                      <button style="border: none; height: 35px;margin-left: 0%;"
+                        class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuClickableInside"
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="true">
+                        (PC). All Approved Resellers
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <li><a class="dropdown-item" href="#">(PC). All Approved Resellers</a></li>
+                        <li><a class="dropdown-item" href="#">(PC). Resellers Awaiting Approval</a></li>
+                        <li><a class="dropdown-item" href="#">Récemment visualisés</a></li>
+                      </ul>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Search</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                      </mat-form-field>
                     </div>
+
                     <div class="dataTable-container">
-                      <table class="table dataTable-table" id="pc-dt-simple">
-                        <thead>
-                          <tr>
-                            <th><a href="#" class="dataTable-sorter">Automatisation ID</a></th>
-                            <th><a href="#" class="dataTable-sorter">Revendeur</a></th>
-                            <th><a href="#" class="dataTable-sorter">Crée par</a></th>
-                            <th><a href="#" class="dataTable-sorter">Statut</a></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>10569</td>
-                            <td>INFORSAL</td>
-                            <td>Curicó</td>
-                            <td>En cours</td>
-                          </tr>
 
+                      <table id="ExampleMaterialTable" mat-table [dataSource]="dataSource">
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="numero">
+                          <th mat-header-cell *matHeaderCellDef> Automatisation ID </th>
+                          <td mat-cell *matCellDef="let row"> {{row.numero}} </td>
+                        </ng-container>
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="Revendeur">
+                          <th mat-header-cell *matHeaderCellDef> Revendeur </th>
+                          <td mat-cell *matCellDef="let row"> {{row.revendeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="Demandeur">
+                          <th mat-header-cell *matHeaderCellDef> Crée par </th>
+                          <td mat-cell *matCellDef="let row"> {{row.demandeur}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="dateCreation">
+                          <th mat-header-cell *matHeaderCellDef> Statut </th>
+                          <td mat-cell *matCellDef="let row"> {{row.dateCreation}} </td>
+                        </ng-container>
 
-                        </tbody>
+                        <ng-container matColumnDef="modifier">
+                          <th mat-header-cell *matHeaderCellDef> </th>
+                          <td mat-cell *matCellDef="let row">
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        <!-- Row shown when there is no matching data. -->
+                        <tr class="mat-row" *matNoDataRow>
+                          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                        </tr>
                       </table>
-                    </div>
-                    <div class="dataTable-bottom">
-                      <div class="dataTable-info">Showing 1 to 10 of 100 entries</div>
-                      <nav class="dataTable-pagination">
-                        <ul class="dataTable-pagination-list">
-                          <li class="active"><a href="#" data-page="1">1</a></li>
-                          <li class=""><a href="#" data-page="2">2</a></li>
-                          <li class=""><a href="#" data-page="3">3</a></li>
-                          <li class=""><a href="#" data-page="4">4</a></li>
-                          <li class=""><a href="#" data-page="5">5</a></li>
-                          <li class=""><a href="#" data-page="6">6</a></li>
-                          <li class=""><a href="#" data-page="7">7</a></li>
-                          <li class="ellipsis"><a href="#">…</a></li>
-                          <li class=""><a href="#" data-page="10">10</a></li>
-                          <li class="pager"><a href="#" data-page="2">›</a></li>
-                        </ul>
-                      </nav>
+                      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                        aria-label="Select page of periodic elements">
+                      </mat-paginator>
                     </div>
                   </mat-tab>
                 </mat-tab-group>

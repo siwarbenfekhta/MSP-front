@@ -20,6 +20,9 @@ import { SidebarComponent } from './Private/admin/dashboard/sidebar/sidebar.comp
 import { MobileComponent } from './Private/admin/dashboard/mobile/mobile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table'  
 
 @NgModule({
   declarations: [
@@ -44,7 +47,12 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatPaginatorModule,
+    MatInputModule,  
+    MatTableModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
